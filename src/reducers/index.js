@@ -19,7 +19,7 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 smurfs: action.payload,
                 isLoading: false,
-                errors: ''
+                error: ''
             };
         case FAIL:
             return {
@@ -30,8 +30,7 @@ const reducer = (state = initialState, action) => {
         case ADD_SMURF:
             const newSmurf = {
                 ...action.payload,
-                id: Date.now().toString()
-                
+                id: Date.now().toString()  
             }
             return {
                  ...state,

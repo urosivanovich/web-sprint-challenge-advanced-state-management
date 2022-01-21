@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { errorMsg, postSmurf } from '../actions';
 
+
 const AddForm = (props) => {
     console.log(props)
     const [state, setState] = useState({
@@ -11,8 +12,6 @@ const AddForm = (props) => {
         description:""
     });
 
-    //remove when error state is added
-    // const errorMessage = "";
 
     const handleChange = e => {
         setState({
@@ -29,6 +28,7 @@ const AddForm = (props) => {
         } else {
             //dispatch an addSmurf action
             props.dispatch(postSmurf(state))
+            props.dispatch(errorMsg(''))
             
         }
     }
