@@ -12,7 +12,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.css";
 
 const App = (props) => {
-  console.log(props)
 
   useEffect(() => {
     props.getSmurfs()

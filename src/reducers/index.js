@@ -30,22 +30,19 @@ const reducer = (state = initialState, action) => {
         case ADD_SMURF:
             const newSmurf = {
                 ...action.payload,
-                name: '',
-                nickname: '',
-                position: '',
-                description: '',
-                id: Date.now()
+                id: Date.now().toString()
+                
             }
             return {
                  ...state,
                  smurfs: [...state.smurfs, newSmurf],
                  isLoading: false,
-                 error: ''
+                
              };
         case ERROR_MESSAGE:
              return {
                  ...state,
-                 errorMsg: action.payload
+                 error: action.payload
              }
         default:
             return state;
